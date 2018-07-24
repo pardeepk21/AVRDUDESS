@@ -25,8 +25,10 @@ namespace avrdudess
         public int getSize(string file)
         {
             int totalSize = INVALID;
+            file = @"" + file;
             if (File.Exists(file))
             {
+                file = "\"" + file + "\"";
                 if (launch(file, null, null, OutputTo.Log))
                 {
                     waitForExit();
